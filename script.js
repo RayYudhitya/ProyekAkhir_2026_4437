@@ -11,7 +11,7 @@
  */
 
 // Data awal disediakan guru. Jangan diubah.
-const daftarKegiatan = ["Piket Kelas", "Rapat OSIS", "Kerja Bakti"];
+const daftarKegiatan = ["Piket Kelas", "Rapat OSIS", "Kerja Bakti" ];
 
 function tampilkanKegiatan(daftar) {
   const elemenDaftar = document.getElementById("daftarKegiatan");
@@ -26,10 +26,10 @@ function tampilkanKegiatan(daftar) {
   // TODO JS-01:
   // Perbaiki batas perulangan for berikut agar dimulai dari indeks pertama
   // dan memproses seluruh elemen berdasarkan panjang Array (length).
-  for (let i = 0; i < 0; i++) {
+  for (let i = 0; i <daftar.length; i++) {
     // TODO JS-02:
     // Ganti string kosong dengan elemen Array 'daftar' pada indeks i.
-    const namaKegiatan = "";
+    const namaKegiatan = daftar[i];
 
     // Disediakan guru: pembentukan dan penampilan elemen HTML.
     const item = document.createElement("li");
@@ -120,3 +120,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Area penambahan Function untuk pertemuan berikutnya akan diberikan
 // oleh guru pada saat paket soal berikutnya dibagikan.
+
+
+// =====================================================================
+// KERANGKA SOAL SABTU, 21 NOVEMBER 2026
+// Tambahkan blok ini pada AKHIR script.js hasil Checkpoint 1 (17 Nov).
+// Jangan menghapus/mengganti kode yang sudah dikerjakan pada 17 Nov.
+// Hapus baris return sementara setelah logika TODO yang sesuai lengkap.
+// =====================================================================
+
+// TODO JS-03, JS-04, JS-05 — Validasi dan penambahan kegiatan
+function tambahKegiatan(daftar, nama) {
+  const namaBersih = nama.trim();
+
+
+  if (namaBersih === "") {
+    return false;
+  }
+
+  if (daftar.includes(namaBersih)) {
+    return false;
+  }
+
+  daftar.push(namaBersih);
+  return true;
+
+}
+
+// TODO JS-06 — Pencarian kegiatan
+function cariKegiatan(daftar, nama) {
+  const namaBersih = nama.trim();
+  const indeks = daftar.indexOf(namaBersih);
+  return indeks; // Mengembalikan indeks atau -1 jika tidak ditemukan
+
+}
+
+
+// TODO JS-07 dan JS-08 — Penghapusan kegiatan
+function hapusKegiatan(daftar, nama) {
+  const namaBersih = nama.trim();
+  if (namaBersih === "") {
+    return false; // Nama kosong
+  }
+
+  const indeks = cariKegiatan(daftar, nama);
+  if (indeks === -1) {
+    return false; // Kegiatan tidak ditemukan
+  }
+
+  daftar.splice(indeks, 1); // Hapus satu elemen pada indeks yang ditemukan
+  return true; // Penghapusan berhasil
+
+}
+
+function hitungJumlahKegiatan(daftar) {
+  return daftar.length; // Mengembalikan jumlah kegiatan dalam Array
+}

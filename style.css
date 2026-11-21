@@ -16,42 +16,107 @@
 body {
   font-style: italic;
   text-align: center;
-  color: black;
+  color: rgb(255, 0, 0);
   background-color: white;
-  margin: 10px 20px;
+  margin: 100px 200px;
   padding: auto;
 }
 
 /* TODO CSS-02: Atur lebar konten, posisi, padding, margin,
    border dan border-radius seperlunya. */
-.container {}
+.container {
+width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 10px solid #00ffc3;
+  border-radius: 10px;
 
-.kepala-halaman {}
+}
 
-.panel {}
+.kepala-halaman {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #0d7377;
+}
+
+.panel {
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #00ffaa;
+  border: 1px solid #009975;
+  border-radius: 8px;
+}
 
 /* TODO CSS-03: Atur ukuran input, padding, jarak antar elemen,
    warna tombol, dan tampilan yang konsisten. */
-.form-baris {}
+.form-baris {
+margin-bottom: 12px;
+}
 
-.form-baris label {}
+.form-baris label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-.form-baris input {}
+.form-baris input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
 
-.aksi {}
+.aksi {
+  display: contents;
+  gap: 8px;
+}
 
-.aksi button {}
+.aksi button {
+    padding: 9px 9px;
+  font-size: 15px;
+font-style: italic;
+  color: #000000;
+  background-color: #e4e4e4;
+  border-radius: 6px;
+cursor: pointer;
+}
 
 /* TODO CSS-04: Rapikan daftar kegiatan, jumlah kegiatan, dan pesan
    status. Bedakan tampilan status berhasil dan gagal. */
-#daftarKegiatan {}
+#daftarKegiatan {
+  padding-left: 24px;
+}
 
-#daftarKegiatan li {}
+#daftarKegiatan li {
+  margin-bottom: 8px;
+  padding: 20px 10px;
+  background-color:  #ffffff;
+  border-radius: 40px;
+}
 
-.ringkasan {}
+.ringkasan {
+  margin: 16px 0 8px;
+  font-weight: bold;
+}
 
-#pesanStatus {}
+#pesanStatus {
+  padding: 20px 20px;
+  background-color: #e8f4f4;
+  color: #0d5c5f;
+  border-radius: 6px;
+}
 
-#pesanStatus.berhasil {}
+#pesanStatus.berhasil {
+  background-color: #e3f6e8;
+  color: #1e6b34;
+  border-left: 4px solid #2e9e4f;
+}
 
-#pesanStatus.gagal {}
+#pesanStatus.gagal {
+    background-color: #fbe6e3;
+  color: #9b2c1f;
+  border-left: 4px solid #c0392b;
+}
